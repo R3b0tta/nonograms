@@ -1,0 +1,412 @@
+  body {
+    background-color: #4241b9;
+    color: white;
+    display: flex;
+    justify-content: center;
+    transition: all ease-in-out 0.4s;
+
+  }
+  body.dark-mode {
+    background-color: #0c0c1e;
+  }
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    opacity: 0.6;
+    z-index: -1;
+  }
+  .feedback {
+    display: flex;
+    justify-content: center;
+  }
+  .app {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 1440px;
+    width: 100%;
+    margin: 20vh 60vh;
+    background-color: rgb(89, 120, 153);
+    border-radius: 20px;
+    transition: all ease-in-out 0.4s;
+  }
+  .dark-mode .app {
+    background-color: rgb(46, 64, 84);
+  }
+  .head {
+    font-weight: 600;
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+    font-style: italic;
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .head__darktimer {
+      display: flex;
+      flex-direction: row;
+    }
+    img {
+      max-width: 30px;
+      max-height: 30px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+    .head__darkmode:hover {
+      transform: scale(1.2);
+      transition: all ease-in-out 0.1s;
+    }
+  }
+
+  .controls {
+    display: flex;
+    flex-direction: row;
+    font-size: 18px;
+    gap: 10px;
+    align-items: center;
+    padding: 20px;
+    .controls__title {
+      font-size: 16px;
+      font-weight: 600;
+      text-align: center;
+      color: #fff;
+      white-space: nowrap;
+    }
+    select {
+      width: 100%;
+      max-width: 300px;
+      padding: 10px;
+      font-size: 16px;
+      font-weight: 500;
+      color: #333;
+      background-color: #fff;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+      transition: border-color 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+    select:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+    select option {
+      padding: 10px;
+      font-size: 16px;
+      background-color: #fff;
+      color: #333;
+    }
+    select:disabled {
+      background-color: #f0f0f0;
+      color: #aaa;
+      cursor: not-allowed;
+    }
+
+    button {
+      display: inline-block;
+      width: 100%;
+      max-width: 300px;
+      padding: 12px 20px;
+      font-size: 16px;
+      font-weight: 600;
+      text-align: center;
+      color: #fff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    button:active {
+      background-color: #00408f;
+      transform: scale(0.98);
+    }
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    .dark-mode button {
+      background-color: #222;
+      color: #fff;
+    }
+    .dark-mode button:hover {
+      background-color: #333;
+    }
+  }
+  .dark-mode select {
+    background-color: #222;
+    color: #fff;
+    border-color: #555;
+    transition: all ease-in-out 0.4s;
+  }
+
+  .dark-mode select:focus {
+    border-color: #00bfff;
+    box-shadow: 0 0 5px rgba(0, 191, 255, 0.5);
+    transition: all ease-in-out 0.4s;
+  }
+  .dark-mode option {
+    background-color: #222;
+  }
+
+  .foot {
+    display: flex;
+    flex-direction: row;
+    font-size: 18px;
+    gap: 10px;
+    align-items: center;
+    padding: 20px;
+    button {
+      display: inline-block;
+      width: 100%;
+      max-width: 300px;
+      min-width: 120px;
+      padding: 12px 20px;
+      font-size: 16px;
+      font-weight: 600;
+      text-align: center;
+      color: #fff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    button:active {
+      background-color: #00408f;
+      transform: scale(0.98);
+    }
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+  }
+  .dark-mode button {
+    background-color: #222;
+    color: #fff;
+  }
+  .dark-mode button:hover {
+    background-color: #333;
+  }
+  .game {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    margin: auto;
+    padding: 20px;
+  }
+
+  .game__hints {
+    margin-top: 5px;
+    display: flex;
+    justify-content: flex-end !important;
+    align-items: flex-end !important;
+    margin-left: 90px;
+    align-self: flex-end;
+  }
+
+  .game__hints-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+
+  .game__hints-column {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-top: auto;
+    div {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+  }
+
+  .game__grid {
+    display: grid;
+    grid-template-columns: repeat(5, 30px);
+    grid-template-rows: repeat(5, 30px);
+  }
+
+
+  .grid__cell {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+
+  .grid__cell.filled {
+    background-color: black;
+  }
+  .dark-mode .grid__cell.filled {
+    background-color: white;
+  }
+
+  .grid__cell.crossed {
+    background-color: red;
+  }
+  .game__grid-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background-color: transparent;
+    pointer-events: auto;
+  }
+  .game__grid-overlay.hidden {
+    display: none;
+  }
+  .game__grid-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    position: relative;
+  }
+  .hint-row {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .hint-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .game__hints-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+
+  .hint-box {
+    width: 33.9px;
+    height: 33.9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white;
+    font-size: 14px;
+  }
+  @media (max-width: 768px) {
+    .app {
+      margin: 5vh auto;
+      padding: 15px;
+    }
+    .head {
+      font-size: 20px;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .controls {
+      flex-direction: column !important;
+      align-items: center;
+      text-align: center;
+    }
+
+    .game__grid {
+      grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
+      grid-template-rows: repeat(auto-fit, minmax(20px, 1fr));
+    }
+
+    .grid__cell {
+      width: 25px;
+      height: 25px;
+    }
+    .hint-box {
+      width: 23.9px;
+      height: 23.9px;
+    }
+    .controls select,
+    .controls button {
+      max-width: 100%;
+      font-size: 14px;
+      padding: 10px;
+    }
+    button {
+      max-width: 100%;
+      padding: 10px 15px;
+      font-size: 14px;
+    }
+    .foot {
+      flex-direction: column;
+    }
+    .foot button {
+      max-width: 100%;
+      font-size: 14px;
+      padding: 10px;
+    }
+  }
+  @media (max-width: 560px) {
+    .app {
+      width: 95%;
+      padding: 10px;
+    }
+
+    .head {
+      font-size: 18px;
+    }
+    .hint-box {
+      width: 16.9px;
+      height: 16.9px;
+    }
+    .controls select,
+    .controls button {
+      max-width: 100%;
+      font-size: 14px;
+      padding: 10px;
+    }
+
+    .grid__cell {
+      width: 18px;
+      height: 18px;
+    }
+    button {
+      max-width: 150px;
+      padding: 8px 12px;
+      font-size: 12px;
+    }
+  }
+  @media (max-width: 420px) {
+    .grid__cell {
+      width: 16px;
+      height: 16px;
+    }
+    .hint-box {
+      width: 14.9px;
+      height: 14.9px;
+    }
+  }
+  @media (max-width: 380px) {
+    .grid__cell {
+      width: 14px;
+      height: 14px;
+    }
+    .hint-box {
+      width: 12.9px;
+      height: 12.9px;
+    }
+  }
